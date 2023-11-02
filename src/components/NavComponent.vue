@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       categories: [],
-    };
+    }
   },
   mounted() {
     // When the component is mounted, fetch the categories
@@ -30,7 +30,7 @@ export default {
         this.categories = response.data
       })
       .catch((error) => {
-          console.error('Error fetching categories:', error);
+          console.error('Error fetching categories:', error)
         })
     },
   },

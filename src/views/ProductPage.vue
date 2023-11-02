@@ -1,5 +1,7 @@
 <template>
-
+  <div v-show="isLoading" class="absolute top-0 right-0 bottom-0 left-0 z-99 flex items-center justify-center bg-slate-50/75">
+    <LoaderSpin />
+  </div>
   <div class="flex flex-col items-center">
     <h2 class="text-4xl font-semibold mt-10 mb-6 text-center">{{ product.name }}</h2>
     <span class="text-m italic mb-4">SKU: {{ product.sku }}</span>
@@ -18,12 +20,14 @@
 <script>
 import axios from 'axios'
 import { useRoute } from 'vue-router'
+import LoaderSpin from '../components/LoaderSpin.vue'
 
 export default {
   data() {
     return {
       product: {},
-    };
+      isLoading: true
+    }
   },
   mounted() {
     // Make an HTTP request to fetch categories
@@ -35,12 +39,22 @@ export default {
 
       axios.get(process.env.VUE_APP_ROOT_API + 'products', { params: { url: route.params.name }})
       .then((response) => {
-        this.product = response.data[0]
+        if (response.data[0]) {
+          this.product = response.data[0]
+        } else {
+          this.$router.push('/not-found')
+        }
       })
       .catch((error) => {
-          console.error('Error fetching products:', error);
-        })
+        console.error('Error fetching products:', error)
+      })
+      .finally(() => {
+        this.isLoading = false
+      })
     },
   },
-};
+  components: {
+    LoaderSpin
+  }
+}
 </script>

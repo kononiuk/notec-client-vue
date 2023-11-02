@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '../views/MainPage.vue'
 import CategoryPage from '../views/CategoryPage.vue'
 import ProductPage from '../views/ProductPage.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/product/:name',
     name: 'ProductPage',
     component: ProductPage,
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

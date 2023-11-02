@@ -4,7 +4,7 @@
     <HeaderComponent />
 
     <!-- The main content area, where the router view is rendered -->
-    <div class="main-content grow">
+    <div class="main-content grow relative">
       <router-view />
     </div>
     <FooterComponent />

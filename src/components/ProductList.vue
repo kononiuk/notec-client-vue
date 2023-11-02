@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue'
 
 export default {
   props: {
@@ -41,6 +41,5 @@ export default {
       products // Return products variable for template access
     }
   }
-
-};
+}
 </script>
