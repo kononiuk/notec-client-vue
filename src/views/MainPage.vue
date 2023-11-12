@@ -25,6 +25,7 @@ export default {
     }
   },
   mounted() {
+    document.title = `Notec`;
     this.fetchProducts()
   },
   methods: {

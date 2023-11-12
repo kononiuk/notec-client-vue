@@ -40,6 +40,7 @@ export default {
       axios.get(process.env.VUE_APP_ROOT_API + 'products', { params: { url: route.params.name }})
       .then((response) => {
         if (response.data[0]) {
+          document.title = `${response.data[0].name}`;
           this.product = response.data[0]
         } else {
           this.$router.push('/not-found')

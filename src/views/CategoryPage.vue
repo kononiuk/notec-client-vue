@@ -33,6 +33,7 @@ export default {
           return router.push('/not-found')
         }
           
+        document.title = `${response.data[0].name}`
         category.value = response.data[0]
 
         if (category.value.products.length) {
