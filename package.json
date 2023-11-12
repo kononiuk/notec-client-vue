@@ -9,6 +9,7 @@
     "tailwind": "npx tailwindcss -i ./css/styles.css -o ./public/css/styles.css --watch"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "axios": "^1.6.0",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
