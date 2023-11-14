@@ -4,7 +4,7 @@
     <!-- Loop through productsArray and display each product -->
     <li v-for="product in productsArray" :key="product.id" class="mb-2 p-4 bg-neutral-100 rounded">
       <div class="product flex flex-col text-center">
-        <router-link :to="'/product/' + product.url">{{ product.name }}</router-link>
+        <router-link :to="`/product/${product.url}`">{{ product.name }}</router-link>
         <span class="price">{{product.displayPrice}}</span>
         <div class="actions w-full">
           <!-- Check if the product is in stock -->

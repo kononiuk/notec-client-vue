@@ -3,7 +3,7 @@
     <ul class="flex items-center h-full gap-2">
       <!-- Loop through categories and create links -->
       <li v-for="category in categories" :key="category.categoryId">
-        <router-link :to="'/category/' + category.url">{{ category.name }}</router-link>
+        <router-link :to="`/category/${category.url}`">{{ category.name }}</router-link>
       </li>
     </ul>
   </nav>
